@@ -1,7 +1,15 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: rgb(238, 184, 184);
+$primary-font-size: large;
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font: 100% $font-stack;
+    background-color: $primary-color;
+    font-size: $primary-font-size;
+
 }
 
 main {
