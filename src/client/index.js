@@ -7,11 +7,13 @@ import './styles/form.scss'
 import './styles/footer.scss'
 import './styles/header.scss'
 
-console.log(checkForName);
-
-alert("I EXIST")
 
 export {
     checkForName,
     handleSubmit
-}
+   }
+
+console.log(checkForName);
+
+alert("I EXIST")
+
