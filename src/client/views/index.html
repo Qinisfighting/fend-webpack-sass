@@ -29,15 +29,21 @@
 
         <main>
             <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                <form id="form" class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" onblur="Client.handleSubmit(event)" placeholder="Enter Zipcode here(US)">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
+                <p id="log"></p>
             <section>
 
             <section>
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <br>
+                <div id="results">
+                    <div id="city"></div>
+                    <div id="date"></div>
+                    <div id="temp"></div>
+                </div>
             </section>
         </main>
 

@@ -1,16 +1,19 @@
-var path = require('path')
-const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
-var bodyParser = require('body-parser')
-var cors = require('cors')
+projectData = {};
 
-var json = {
+
+let path = require('path')
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+
+let json = {
     'title': 'test json response',
     'message': 'this is a message',
     'time': 'now'
 }
 
 const app = express()
+
 app.use(cors())
 // to use json
 app.use(bodyParser.json())
@@ -21,17 +24,27 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static('dist'))
 
-console.log(JSON.stringify(mockAPIResponse))
 
-app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
-})
-
-app.get('/test', function (req, res) {
-    res.json(mockAPIResponse);
-})
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
+})
+
+app.listen(8080, function () {
+    console.log('Example app listening on port 8080!')
+})
+
+app.get('/all', (req,res) => {
+    res.send(projectData);  
+})
+
+app.post('/addData', (req,res) => {
+    newEntry = {
+    date: req.body.date,
+    name: req.body.name,
+    temp: req.body.temp,
+    }
+    projectData = newEntry;
+    res.send(projectData)
 })
