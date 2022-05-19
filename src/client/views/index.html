@@ -39,5 +39,19 @@
             <p>This is a footer</p>
         </footer>
 
+<<<<<<< Updated upstream
+=======
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                    console.log('SW registered! Scope is:',registration.scope);
+                });
+            }
+        </script>
+
+>>>>>>> Stashed changes
     </body>
 </html>
